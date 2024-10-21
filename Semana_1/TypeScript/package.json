@@ -2,14 +2,18 @@
   "name": "typescript",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsc ejercicio_1.ts && node ejercicio_1.js"
+    "start": "node dist/src/index.js",
+    "build": "swc src -d dist"
+  
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@swc/cli": "^0.4.1-nightly.20240914",
+    "@swc/core": "^1.7.36",
     "typescript": "^5.6.3"
   }
 }

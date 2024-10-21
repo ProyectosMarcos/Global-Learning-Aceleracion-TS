@@ -15,6 +15,8 @@ const initialTasks = [
   { id: 3, title: "Actualizar software", description: "Instalar últimas actualizaciones", dueDate: "2024-03-20", priority: 3 }
 ];
 ```
+
+Ejercicio 3
  */
 
 
@@ -32,19 +34,19 @@ class TaskManager {
         this.tasks = [];
     }
 
-    agregarTarea(tarea) {
-        this.tasks.push(tarea);
+    addTask(task) {
+        this.tasks.push(task);
     }
 
-    eliminarTarea(title) {
+    deleteTask(title) {
         this.tasks = this.tasks.filter((task) => task.title !== title);
     }
 
-    ordenarPorPrioridad() {
+    sortByPriority() {
         this.tasks.sort((a, b) => a.priority - b.priority);
     }
 
-    mostrarTareas() {
+    showTasks() {
         this.tasks.forEach((task) => {
             console.log(
                 `${task.title} (Prioridad: ${task.priority}) - Fecha de vencimiento: ${task.dueDate}`
@@ -78,22 +80,22 @@ const initialTasks = [
     },
 ];
 
-const gestor = new TaskManager();
+const manager = new TaskManager();
 
 initialTasks.forEach((task) => {
-    const nuevaTarea = new Task(
+    const newTask = new Task(
         task.title,
         task.description,
         task.dueDate,
         task.priority
     );
-    gestor.agregarTarea(nuevaTarea);
+    manager.addTask(newTask);
 });
 
 console.log('Tareas antes de ordenar:');
-gestor.mostrarTareas();
+manager.showTasks();
 
-gestor.ordenarPorPrioridad();
+manager.sortByPriority();
 
 console.log('Tareas después de ordenar por prioridad:');
-gestor.mostrarTareas();
+manager.showTasks();
